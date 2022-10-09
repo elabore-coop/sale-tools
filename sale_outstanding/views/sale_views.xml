@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_order_form_inherit_outstanding" model="ir.ui.view">
+        <field name="name">sale.order.view.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <field name="amount_untaxed" position="after">
+                <field name="sum_outstanding" />
+                <field name="sum_pending_work" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_order_tree_inherit_outstanding" model="ir.ui.view">
+        <field name="name">sale.order.tree.outstanding</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_tax']" position="after">
+                <field name="sum_outstanding" sum="Outstanding Total" optional="hide" />
+                <field name="sum_pending_work" sum="Pending work Total" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_quotation_tree_inherit_outstanding" model="ir.ui.view">
+        <field name="name">quotation.tree.outstanding</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_tax']" position="after">
+                <field name="sum_outstanding" sum="Outstanding Total" optional="hide" />
+                <field name="sum_pending_work" sum="Pending work Total" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
