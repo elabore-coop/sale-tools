@@ -12,7 +12,7 @@ class SaleOrder(models.Model):
     @api.depends("order_line.qty_delivered", "order_line.product_uom_qty", "order_line.price_unit")
     def _compute_sum_pending_work(self):
         for order in self:
-            lines_pending_work = order.order_line.mapped(lambda r:((r.product_uom_qty - r.qty_delivered) * r.price_unit))
+            lines_pending_work = order.order_line.mapped(lambda r:((r.product_uom_qty - r.qty_delivered) * r.price_unit) if not r.product_id or r.product_id.service_policy != 'ordered_timesheet' else 0)
             order["sum_pending_work"] = sum(lines_pending_work)
 
 
