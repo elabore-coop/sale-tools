@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_order_tree_validity_date_inherit" model="ir.ui.view">
+        <field name="name">view.order.tree.validity.date.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='create_date']" position="after">
+                <field name="validity_date" string="Due date" widget="remaining_days" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
