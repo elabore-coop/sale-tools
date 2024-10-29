@@ -1,23 +1,30 @@
-=================================
-sale_order_invoice_untaxed_amount
-=================================
+===============
+sale_usability_misc
+===============
 
-Display the invoiced and uninvoiced untaxed total in the sale order
+Various improves for Sales app
 
 Installation
 ============
 
 Use Odoo normal module installation procedure to install
-``sale_order_invoice_untaxed_amount``.
+``sale_usability_misc``.
+
+Description
+===========
+
+- Allow group sales administores to see date_order field event if not in developper mode
+
 
 Known issues / Roadmap
 ======================
 
 None yet.
+
 Bug Tracker
 ===========
 
-Bugs are tracked on `our issues website <https://github.com/elabore-coop/sale-tools/issues>`_. In case of
+Bugs are tracked on `our issues website <https://github.com/elabore-coop/sale_usability_misc/issues>`_. In case of
 trouble, please check there if your issue has already been
 reported. If you spotted it first, help us smashing it by providing a
 detailed and welcomed feedback.
@@ -28,7 +35,7 @@ Credits
 Contributors
 ------------
 
-* Stéphan Sainléger
+* `Elabore <mailto:laetitia.dacosta@elabore.coop>`
 
 Funders
 -------

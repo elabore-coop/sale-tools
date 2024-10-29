@@ -1,18 +1,18 @@
-# Copyright 2022 Stéphan Sainléger (Elabore)
+# Copyright 2024 Elabore ()
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    "name": "sale_outstanding",
-    "version": "14.0.1.0.0",
+    "name": "sale_usability_misc",
+    "version": "16.0.1.0.0",
     "author": "Elabore",
     "website": "https://elabore.coop",
-    "maintainer": "Stéphan Sainléger",
+    "maintainer": "Elabore",
     "license": "AGPL-3",
-    "category": "Tools",
-    "summary": "Calculates and displays the sale order outstanding and pending work.",
+    "category": "Sales",
+    "summary": "Various improves for Sales app",
     # any module necessary for this one to work correctly
     "depends": [
-        "base", "sale"
+        "base","sale","sales_team",
     ],
     "qweb": [],
     "external_dependencies": {
@@ -20,7 +20,7 @@
     },
     # always loaded
     "data": [
-        "views/sale_views.xml",
+        "views/sale_order_views.xml",
     ],
     # only loaded in demonstration mode
     "demo": [],
