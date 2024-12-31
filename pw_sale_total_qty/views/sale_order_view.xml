@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_order_form_inherit_pw_total_qty" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.pw.total.qty</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='note']" position="before">
+                    <group>
+                        <field name="pw_total_product_uom_qty"/>
+                        <field name="pw_total_qty_delivered"/>
+                        <field name="pw_total_qty_invoiced"/>
+                        <field name="pw_remaining_delivery"/>
+                        <field name="pw_remaining_invoice"/>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='order_line']//tree//field[@name='product_uom_qty']" position="attributes">
+                    <attribute name="sum">Total Demand</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']//tree//field[@name='qty_delivered']" position="attributes">
+                    <attribute name="sum">Total Deliverted</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']//tree//field[@name='qty_invoiced']" position="attributes">
+                    <attribute name="sum">Total Invoiced</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
