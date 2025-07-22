@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
   <record id="view_order_form_inherit" model="ir.ui.view">
@@ -6,12 +6,27 @@
     <field name="model">sale.order</field>
     <field name="inherit_id" ref="sale.view_order_form" />
     <field name="arch" type="xml">
-        <xpath expr="//group[@name='order_details']/div[@class='o_td_label' and @groups='base.group_no_one']" position="attributes">
-          <attribute name="groups">sales_team.group_sale_manager</attribute>
-      </xpath>
-      <xpath expr="//group[@name='order_details']/field[@name='date_order' and @groups='base.group_no_one']" position="attributes">
+      <xpath
+        expr="//group[@name='order_details']/div[@class='o_td_label' and @groups='base.group_no_one']"
+        position="attributes">
         <attribute name="groups">sales_team.group_sale_manager</attribute>
-    </xpath>
+      </xpath>
+      <xpath
+        expr="//group[@name='order_details']/field[@name='date_order' and @groups='base.group_no_one']"
+        position="attributes">
+        <attribute name="groups">sales_team.group_sale_manager</attribute>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="sale_opportunity_not_dev_inherit" model="ir.ui.view">
+    <field name="name">sale.opportunity.not.dev.inherit</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale_crm.sale_view_inherit123" />
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='opportunity_id']" position="attributes">
+        <attribute name="groups">sales_team.group_sale_manager</attribute>
+      </xpath>
     </field>
   </record>
 
