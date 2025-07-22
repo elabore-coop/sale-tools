@@ -3,7 +3,7 @@
 
 {
     "name": "sale_usability_misc",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "author": "Elabore",
     "website": "https://elabore.coop",
     "maintainer": "Elabore",
@@ -12,7 +12,7 @@
     "summary": "Various improves for Sales app",
     # any module necessary for this one to work correctly
     "depends": [
-        "base","sale","sales_team",
+        "base","sale","sales_team","sale_crm",
     ],
     "qweb": [],
     "external_dependencies": {
